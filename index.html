@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Albertina's Personal Website</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+
+  <!-- Box Icons -->
+  <link
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="#home" class="logo">Albertina <span>Ngu</span></a>
+
+    <!-- Fixed icon class -->
+    <i class="bx bx-menu" id="menu-icon"></i>
+
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h1>Hi, It's <span>Albertina</span></h1>
+      <h3 class="text-animation">I'm a <span>University Student</span></h3>
+
+      <div class="social-icons">
+        <a
+          href="https://www.linkedin.com/in/albertina-si-71b2262a8/"
+          target="_blank"
+        >
+          <i class="bx bxl-linkedin"></i>
+        </a>
+        <a
+          href="https://github.com/Tina311?tab=repositories"
+          target="_blank"
+        >
+          <i class="bx bxl-github"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="home-img">
+      <img src="image/Albertina.Photo.jpg" alt="Albertina Photo" />
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="timeline-section" id="education">
+    <h2 class="heading">Education</h2>
+    <div class="timeline-items">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2021–2023</div>
+        <div class="timeline-content">
+          <h3>Pre-University</h3>
+          <p>
+            I pursued my pre-university studies at SMK ST ANTHONY Sarikei from
+            June 2021 to April 2023, where I completed the Sijil Tinggi
+            Persekolahan Malaysia (STPM) with a focus on Science and
+            Mathematics.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2023–Present</div>
+        <div class="timeline-content">
+          <h3>University</h3>
+          <p>
+            I am currently pursuing a Bachelor of Computer Science in Multimedia
+            Computing at Universiti Malaysia Sarawak, where I have been studying
+            since 2023. Through assignments and projects, I have gained
+            knowledge in programming, software development, and
+            problem-solving.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <h2 class="heading">Projects</h2>
+
+    <div class="project-container">
+      <div class="project-box">
+        <i class="bx bxl-java"></i>
+        <h3>Health and Safety System</h3>
+        <p>
+          A Java OOP-based health and safety awareness system featuring
+          interactive lessons, quizzes, and a ranking leaderboard to make
+          learning engaging and competitive.
+        </p>
+        <a
+          href="https://github.com/Tina311?tab=repositories"
+          class="btn"
+          target="_blank"
+          >Learn More</a
+        >
+      </div>
+
+      <div class="project-box">
+        <i class="bx bx-code-alt"></i>
+        <h3>Personal Portfolio Website</h3>
+        <p>
+          A personal portfolio website built with HTML and CSS showcasing my
+          education background, projects, and technical skills in a clean and
+          responsive layout.
+        </p>
+        <a
+          href="https://github.com/Tina311?tab=repositories"
+          class="btn"
+          target="_blank"
+          >Learn More</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <h2 class="heading">Skills</h2>
+    <p class="skills-description">
+      Proficiency in programming languages such as Python, HTML, CSS, and Java,
+      combined with expertise in front-end and back-end development, facilitates
+      scalable solution architecture.
+    </p>
+
+    <div class="skills-container">
+      <div class="info">
+        <img src="image/Html.webp" alt="HTML logo" />
+        <span>HTML</span>
+      </div>
+
+      <div class="info">
+        <img src="image/Css 3.webp" alt="CSS logo" />
+        <span>CSS</span>
+      </div>
+
+      <div class="info">
+        <img src="image/Mysql.webp" alt="MySQL logo" />
+        <span>MySQL</span>
+      </div>
+
+      <div class="info">
+        <img src="image/Python.webp" alt="Python logo" />
+        <span>Python</span>
+      </div>
+
+      <div class="info">
+        <img src="image/Java.webp" alt="Java logo" />
+        <span>Java</span>
+      </div>
+
+      <div class="info">
+        <img src="image/C plusplus.webp" alt="C++ logo" />
+        <span>C++</span>
+      </div>
+
+      <div class="info">
+        <img src="image/Figma.webp" alt="Figma logo" />
+        <span>Figma</span>
+      </div>
+
+      <div class="info">
+        <img src="image/Kotlin.webp" alt="Kotlin logo" />
+        <span>Kotlin</span>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const menu = document.querySelector("#menu-icon");
+    const navbar = document.querySelector(".navbar");
+
+    menu.onclick = () => {
+      navbar.classList.toggle("active");
+    };
+
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("header nav a");
+
+    window.onscroll = () => {
+      sections.forEach(sec => {
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 150;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute("id");
+
+        if (top >= offset && top < offset + height) {
+          navLinks.forEach(link => {
+            link.classList.remove("active");
+            document
+              .querySelector(`header nav a[href*=${id}]`)
+              .classList.add("active");
+          });
+        }
+      });
+    };
+  </script>
+
+<script src="script.js"></script>
+</body>
+</html>
